@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 98%;       /* warm off-white #fafaf9 */
+    --foreground: 220 20% 12%;      /* dark charcoal #18191c */
+    
+    --card: 0 0% 100%;              /* crisp white #ffffff */
+    --card-foreground: 220 20% 12%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 12%;
+    
+    --primary: 226 70% 55%;         /* restrained indigo-blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 226 70% 48%;
+    
+    --secondary: 220 14% 95%;       /* soft neutral */
+    --secondary-foreground: 220 20% 16%;
+    
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;  /* clean secondary text */
+    
+    --accent: 226 70% 96%;
+    --accent-foreground: 226 70% 40%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 90%;          /* subtle hairline border */
+    --input: 220 13% 88%;
+    --ring: 226 70% 55%;
+    
+    --surface: 0 0% 100%;
+    --surface-subtle: 220 14% 97%;
+    
+    --radius: 0.75rem;              /* 12px */
+  }
+
+  .dark {
+    --background: 222 20% 7%;       /* deep near-black #0e1116 */
+    --foreground: 220 14% 96%;      /* crisp soft white */
+    
+    --card: 222 18% 11%;            /* surface card #151921 */
+    --card-foreground: 220 14% 96%;
+    
+    --popover: 222 18% 11%;
+    --popover-foreground: 220 14% 96%;
+    
+    --primary: 226 75% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 226 75% 68%;
+    
+    --secondary: 222 14% 16%;
+    --secondary-foreground: 220 14% 96%;
+    
+    --muted: 222 14% 16%;
+    --muted-foreground: 220 9% 60%;
+    
+    --accent: 226 50% 18%;
+    --accent-foreground: 226 75% 75%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 222 14% 18%;
+    --input: 222 14% 20%;
+    --ring: 226 75% 62%;
+    
+    --surface: 222 18% 11%;
+    --surface-subtle: 222 16% 9%;
+  }
+}
+
+body {
+  @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary font-sans;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* Tabular figures for financial numbers */
+.num-tabular {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
